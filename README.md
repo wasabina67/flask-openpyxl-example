@@ -1,6 +1,16 @@
 # flask-openpyxl-example
 Flask OpenPyXL example
 
+## Setup
+
+```bash
+pipenv shell
+```
+
+```bash
+pipenv sync --dev
+```
+
 ## Run
 
 ```bash
