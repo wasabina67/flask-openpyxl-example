@@ -24,7 +24,7 @@ def download_xlsx():
     return send_file(
         output,
         as_attachment=True,
-        attachment_filename="output.xlsx",
+        download_name="output.xlsx",
         mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     )
 
