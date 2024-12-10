@@ -9,7 +9,19 @@ app = Flask(__name__)
 
 @app.route("/download_xlsx")
 def download_xlsx():
-    return
+    excel_path = os.path.join(app.root_path, "excel_files", "target.xlsx")
+    workbook = load_workbook(excel_path)
+
+    worksheet = workbook["Sheet1"]
+    worksheet["A1"] = "a"
+    worksheet["B1"] = "b"
+    worksheet["C1"] = "c"
+
+    output = io.BytesIO()
+    workbook.save(output)
+    output.seek(0)
+
+    return send_file()
 
 
 if __name__ == "__main__":
