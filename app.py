@@ -21,7 +21,12 @@ def download_xlsx():
     workbook.save(output)
     output.seek(0)
 
-    return send_file()
+    return send_file(
+        output,
+        as_attachment=True,
+        attachment_filename="output.xlsx",
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    )
 
 
 if __name__ == "__main__":
